@@ -1,9 +1,9 @@
+import os
 from setuptools import setup, find_packages
 
-requires = [
-    'nameko==2.8.4',
-    'requests==2.18.4'
-]
+here = os.path.abspath(os.path.dirname(__file__))
+with open(os.path.join(here, 'requirements.txt')) as f:
+    requires = [f.read()]
 
 
 setup(
