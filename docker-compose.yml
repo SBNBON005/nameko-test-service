@@ -1,0 +1,13 @@
+version: '3'
+services:
+  rabbitmq:
+    image: "rabbitmq"
+  nameko-test-service:
+    build: .
+    container_name: "nameko-test-service"
+    depends_on:
+      - rabbitmq
+    ports:
+      - "8000:8000"
+    restart: always
+
